@@ -1,8 +1,9 @@
 import { Search, Heart, ShoppingBag, User, Menu } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 interface HeaderProps {
-  onMenuClick: () => void;
+  onMenuClick?: () => void;
 }
 
 const Header = ({ onMenuClick }: HeaderProps) => {
@@ -11,40 +12,44 @@ const Header = ({ onMenuClick }: HeaderProps) => {
       <div className="container mx-auto px-4">
         <div className="flex h-20 items-center justify-between">
           {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="lg:hidden"
-            onClick={onMenuClick}
-            aria-label="Toggle filters"
-          >
-            <Menu className="h-5 w-5" />
-          </Button>
+          {onMenuClick && (
+            <Button
+              variant="ghost"
+              size="icon"
+              className="lg:hidden"
+              onClick={onMenuClick}
+              aria-label="Toggle filters"
+            >
+              <Menu className="h-5 w-5" />
+            </Button>
+          )}
 
           {/* Logo */}
           <div className="flex-1 lg:flex-none">
-            <h1 className="text-2xl font-bold tracking-tight font-display">
-              LOGO
-            </h1>
+            <Link to="/">
+              <h1 className="text-2xl font-bold tracking-tight font-display hover:text-muted-foreground transition-colors cursor-pointer">
+                LOGO
+              </h1>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
-            <a href="#" className="text-sm font-medium hover:text-muted-foreground transition-colors">
+            <Link to="/shop" className="text-sm font-medium hover:text-muted-foreground transition-colors uppercase tracking-wide">
               SHOP
-            </a>
-            <a href="#" className="text-sm font-medium hover:text-muted-foreground transition-colors">
+            </Link>
+            <Link to="/skills" className="text-sm font-medium hover:text-muted-foreground transition-colors uppercase tracking-wide">
               SKILLS
-            </a>
-            <a href="#" className="text-sm font-medium hover:text-muted-foreground transition-colors">
+            </Link>
+            <Link to="/stories" className="text-sm font-medium hover:text-muted-foreground transition-colors uppercase tracking-wide">
               STORIES
-            </a>
-            <a href="#" className="text-sm font-medium hover:text-muted-foreground transition-colors">
+            </Link>
+            <Link to="/about" className="text-sm font-medium hover:text-muted-foreground transition-colors uppercase tracking-wide">
               ABOUT
-            </a>
-            <a href="#" className="text-sm font-medium hover:text-muted-foreground transition-colors">
+            </Link>
+            <Link to="/contact" className="text-sm font-medium hover:text-muted-foreground transition-colors uppercase tracking-wide">
               CONTACT US
-            </a>
+            </Link>
           </nav>
 
           {/* Right Icons */}

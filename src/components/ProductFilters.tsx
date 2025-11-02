@@ -59,11 +59,10 @@ const filterSections: FilterSection[] = [
 ];
 
 interface ProductFiltersProps {
-  isOpen?: boolean;
-  onClose?: () => void;
+  className?: string;
 }
 
-const ProductFilters = ({ isOpen = true, onClose }: ProductFiltersProps) => {
+const ProductFilters = ({ className }: ProductFiltersProps) => {
   const [expandedSections, setExpandedSections] = useState<Set<string>>(
     new Set(["ideal-for"])
   );
@@ -79,19 +78,11 @@ const ProductFilters = ({ isOpen = true, onClose }: ProductFiltersProps) => {
   };
 
   return (
-    <aside
-      className={`
-        w-full lg:w-filter
-        ${isOpen ? "block" : "hidden lg:block"}
-        transition-all duration-300
-      `}
-    >
-      <div className="sticky top-24 space-y-6 border-r pr-6 pb-8 max-h-[calc(100vh-6rem)] overflow-y-auto">
+    <aside className={`w-full lg:w-filter ${className || ''}`}>
+      <div className="sticky top-24 space-y-6 pr-0 lg:pr-6 lg:border-r pb-8 max-h-[calc(100vh-6rem)] overflow-y-auto">
         {/* Filter Header */}
         <div className="flex items-center justify-between">
-          <div className="space-y-1">
-            <h2 className="text-xl font-semibold tracking-tight">Filters</h2>
-          </div>
+          <h2 className="text-xl font-semibold tracking-tight uppercase">Filters</h2>
         </div>
 
         <Separator />

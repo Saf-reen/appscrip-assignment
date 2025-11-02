@@ -37,26 +37,20 @@ const ProductCard = ({ product }: ProductCardProps) => {
         </div>
 
         {/* Product Info */}
-        <div className="space-y-2">
-          <h3 className="font-semibold text-sm leading-tight line-clamp-2 min-h-[40px]">
+        <div className="space-y-3">
+          <h3 className="font-semibold text-base leading-tight line-clamp-2 min-h-[48px]">
             {product.title}
           </h3>
           
-          <div className="flex items-center gap-2">
-            <p className="text-xs text-muted-foreground">
-              <a href="#" className="hover:underline underline-offset-2">
-                Sign in
-              </a>
-              {" "}or{" "}
-              <a href="#" className="hover:underline underline-offset-2">
-                Create an account
-              </a>
-              {" "}to see pricing
-            </p>
+          <div className="text-sm text-muted-foreground">
+            <span className="underline cursor-pointer hover:text-foreground">Sign in</span>
+            {" "}or{" "}
+            <span className="underline cursor-pointer hover:text-foreground">Create an account</span>
+            {" "}to see pricing
           </div>
 
           <div className="pt-1">
-            <span className="text-lg font-bold">${product.price.toFixed(2)}</span>
+            <span className="text-2xl font-bold">${product.price.toFixed(2)}</span>
           </div>
         </div>
       </CardContent>

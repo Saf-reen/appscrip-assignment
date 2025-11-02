@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Separator } from "@/components/ui/separator";
 
 const Footer = () => {
@@ -7,7 +8,7 @@ const Footer = () => {
         {/* Newsletter Section */}
         <div className="mb-12">
           <div className="max-w-md">
-            <h3 className="text-lg font-semibold mb-4">BE THE FIRST TO KNOW</h3>
+            <h3 className="text-lg font-semibold mb-4 uppercase">BE THE FIRST TO KNOW</h3>
             <p className="text-sm text-muted-foreground mb-4">
               Sign up for updates from metta muse.
             </p>
@@ -17,7 +18,7 @@ const Footer = () => {
                 placeholder="Enter your e-mail..."
                 className="flex-1 px-4 py-2 text-sm border border-input rounded-sm focus:outline-none focus:ring-2 focus:ring-ring"
               />
-              <button className="px-6 py-2 text-sm font-medium bg-primary text-primary-foreground rounded-sm hover:bg-primary/90 transition-colors">
+              <button className="px-6 py-2 text-sm font-medium bg-primary text-primary-foreground rounded-sm hover:bg-primary/90 transition-colors uppercase">
                 SUBSCRIBE
               </button>
             </div>
@@ -30,74 +31,74 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Company */}
           <div>
-            <h4 className="font-semibold mb-4 text-sm">metta muse</h4>
+            <h4 className="font-semibold mb-4 text-sm uppercase">metta muse</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li>
-                <a href="#" className="hover:text-foreground transition-colors">
+                <Link to="/about" className="hover:text-foreground transition-colors">
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-foreground transition-colors">
+                <Link to="/stories" className="hover:text-foreground transition-colors">
                   Stories
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-foreground transition-colors">
+                <Link to="/skills" className="hover:text-foreground transition-colors">
                   Artisans
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-foreground transition-colors">
+                <Link to="/shop" className="hover:text-foreground transition-colors">
                   Boutiques
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-foreground transition-colors">
+                <Link to="/contact" className="hover:text-foreground transition-colors">
                   Contact Us
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold mb-4 text-sm">QUICK LINKS</h4>
+            <h4 className="font-semibold mb-4 text-sm uppercase">QUICK LINKS</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li>
-                <a href="#" className="hover:text-foreground transition-colors">
+                <Link to="/shop" className="hover:text-foreground transition-colors">
                   Orders & Shipping
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-foreground transition-colors">
+                <Link to="/contact" className="hover:text-foreground transition-colors">
                   Join/Login as a Seller
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-foreground transition-colors">
+                <Link to="/shop" className="hover:text-foreground transition-colors">
                   Payment & Pricing
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-foreground transition-colors">
+                <Link to="/shop" className="hover:text-foreground transition-colors">
                   Return & Refunds
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-foreground transition-colors">
+                <Link to="/faq" className="hover:text-foreground transition-colors">
                   FAQs
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-foreground transition-colors">
+                <Link to="/privacy" className="hover:text-foreground transition-colors">
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-foreground transition-colors">
+                <Link to="/terms" className="hover:text-foreground transition-colors">
                   Terms & Conditions
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
